@@ -115,6 +115,7 @@ public class Vault extends JavaPlugin {
         getCommand("vault-info").setExecutor(this);
         getCommand("vault-convert").setExecutor(this);
         getServer().getPluginManager().registerEvents(new VaultListener(), this);
+        if (false) { // okocraft - disable update checker and metrics to avoid using Bukkit#getScheduler
         // Schedule to check the version every 30 minutes for an update. This is to update the most recent 
         // version so if an admin reconnects they will be warned about newer versions.
         this.getServer().getScheduler().runTask(this, new Runnable() {
@@ -158,6 +159,7 @@ public class Vault extends JavaPlugin {
         // Load up the Plugin metrics
         Metrics metrics = new Metrics(this, 887);
         findCustomData(metrics);
+        } // okocraft
 
         log.info(String.format("Enabled Version %s", getDescription().getVersion()));
     }
