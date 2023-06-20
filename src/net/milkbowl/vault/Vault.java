@@ -94,6 +94,7 @@ public class Vault extends JavaPlugin {
     public void onDisable() {
         // Remove all Service Registrations
         getServer().getServicesManager().unregisterAll(this);
+        if (false) // okocraft - no longer needed
         Bukkit.getScheduler().cancelTasks(this);
     }
 
